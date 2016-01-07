@@ -39,7 +39,7 @@ namespace receiver
                     context.Lease.PartitionId, data));
             }
 
-            //Call checkpoint every 5 minutes, so that worker can resume processing from the 5 minutes back if it restarts.
+            //Call checkpoint every 5 minutes, so that worker can resume processing from 5 minutes back if it restarts.
             if (this.checkpointStopWatch.Elapsed > TimeSpan.FromMinutes(5))
             {
                 await context.CheckpointAsync();
